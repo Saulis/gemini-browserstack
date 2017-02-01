@@ -64,6 +64,14 @@ describe('browserstack', function() {
       expect(done.args[0][1].gridUrl).to.equal('http://foo:bar@hub.browserstack.com/wd/hub');
     });
 
+    it('should set localIdentifier.', function() {
+      opts.localIdentifier = 'abc123'
+
+      start();
+
+      expect(wrapper.alwaysCalledWithMatch({localIdentifier: 'abc123'})).to.be.true;
+    });
+
     it('should enable cleankill on interrupt', function() {
       start();
 

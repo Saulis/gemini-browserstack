@@ -78,6 +78,21 @@ describe('plugin', function() {
     expect(opts.accessKey).to.equal('bar');
   });
 
+  it  ('should set localIdentifier in capabilities', function() {
+    var opts = {username: 'foo', accessKey: 'bar', localIdentifier: "abc123"};
+    gemini.config._browsers = {'chrome': {desiredCapabilities: {platform: 'Windows'}}};
+
+    plugin(gemini, opts);
+
+    browserstack.start = function(opts, cb) {
+      cb(null, {});
+    };
+
+    gemini['startRunner']()
+
+    expect(gemini.config._browsers.chrome.desiredCapabilities['browserstack.localIdentifier']).to.equal('abc123');
+  });
+
   function init() {
     plugin(gemini, {username: 'foo', accessKey: 'bar'});
   };
