@@ -12,6 +12,7 @@ Works with [gemini](https://github.com/gemini-testing/gemini) [v1.0.0](https://g
 ## Configuration
 - __username__ (optional) sets the username for BrowserStack. Defaults to environmental variable BS_USERNAME
 - __accessKey__ (optional) sets the accesskey for BrowserStack. Defaults to environmental variable BS_ACCESS_KEY
+- __localIdentifier__ (optional) sets the local identifier for BrowserStack. Enables you to run multiple parallel tests.
 
 Example configuration for your `.gemini.yml`
 
