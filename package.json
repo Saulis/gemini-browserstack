@@ -1,6 +1,6 @@
 {
   "name": "gemini-browserstack",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Plugin for starting up a tunnel to BrowserStack when running tests with Gemini",
   "main": "lib/plugin.js",
   "scripts": {
